@@ -1,0 +1,138 @@
+#{extends 'main.html' /}
+#{set title:'Mar Peruano Restaurante' /}
+#{set 'moreScripts'}
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+#{/set}
+
+<div class="banner" id="banner-contacto">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="titulo">
+			CONTACTO
+		</div>
+		<div class="leyenda">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		</div>
+	</div>
+</div>
+
+<div class="post1">
+	<div class="container">
+		<div class="texto1">Danos el</div>
+		<div class="texto2">Gusto de Atenderte</div>
+		<div class="divider"></div>
+		<div class="contenido">
+			<div class="row row1">
+				<div class="col-sm-4">
+					<div class="infobox">
+						<div class="icon"><img src="@{'public/images/ic-ubicacion.svg'}" alt="Ubicacion"></div>
+						<div class="yellowtext">Parque Alameda</div>
+						<div class="graytext">Carrera 23 No. 7 - 09 Parque Alameda</div>
+					</div>
+					<div class="infobox visible-xs">
+						<div class="yellowtext">Vía Yumbo</div>
+						<div class="graytext">Carrera 28 No. 10 - 105 Vía Antigua Yumbo</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="infobox">
+						<div class="icon"><img src="@{'public/images/ic-horario.svg'}" alt="Horario"></div>
+						<div class="yellowtext">Lunes a Viernes</div>
+						<div class="graytext">11:00 AM - 8:00 PM</div>
+					</div>
+					<div class="infobox visible-xs">
+						<div class="yellowtext">Sábados, Domingos y Festivos</div>
+						<div class="graytext">10:00 AM - 11:00 PM</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="infobox">
+						<div class="icon"><img src="@{'public/images/ic-llamanos.svg'}" alt="Llamanos"></div>
+						<div class="yellowtext">Llámanos</div>
+						<div class="graytext"><span>(+57) </span>2 555 5307<span> | (+57) </span>320 6303032</div>
+					</div>
+					<div class="infobox visible-xs ultimo">
+						<div class="yellowtext">Escríbenos</div>
+						<div class="graytext">marperuanosm@gmail.com</div>
+					</div>
+				</div>
+			</div>
+			<div class="row hidden-xs">
+				<div class="col-sm-4">
+					<div class="infobox">
+						<div class="yellowtext">Vía Yumbo</div>
+						<div class="graytext">Carrera 28 No. 10 - 105 Vía Antigua Yumbo</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="infobox">
+						<div class="yellowtext">Sábados, Domingos y Festivos</div>
+						<div class="graytext">10:00 AM - 11:00 PM</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="infobox">
+						<div class="yellowtext">Escríbenos</div>
+						<div class="graytext">marperuanosm@gmail.com</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="mapa" id="googleMap"></div>
+
+<div class="post1">
+	<div class="container">
+		<div class="texto1">Envíanos un</div>
+		<div class="texto2">Mensaje</div>
+		<div class="divider"></div>
+		<div class="contenido">
+			<div class="texto-contenido">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			</div>
+			<div class="contacto">
+				<div class="inputs row">
+					<div class="col-sm-4 izq">
+						<input placeholder="Nombre completo (*)" type="text">
+					</div>
+					<div class="col-sm-4 izq">
+						<input placeholder="Email (*)" type="text">
+					</div>
+					<div class="col-sm-4">
+						<input placeholder="Teléfono (*)" type="text">
+					</div>
+				</div>
+				<div>
+					<textarea cols="30" rows="10"></textarea>
+					<button class="boton">Enviar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script>
+	function initialize() {
+		var mapProp = {
+			center:new google.maps.LatLng(3.4376354,-76.5363397),
+			zoom:19,
+			scrollwheel: false,
+			mapTypeId:google.maps.MapTypeId.ROADMAP
+		};
+		var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+		var myLatLng = {lat: 3.4376354, lng: -76.5363397};
+
+		var marker = new google.maps.Marker({
+			position: myLatLng,
+			map: map,
+			title: 'Restaurante Mar Peruano'
+		});
+
+		marker.setMap(map);
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
+</script>

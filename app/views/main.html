@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>#{get 'title' /}</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/bootstrap.min.css'}">
+	<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
+	<link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+	<script src="@{'/public/javascripts/jquery-1.11.3.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	<script src="@{'/public/javascripts/bootstrap.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	#{get 'moreScripts' /}
+</head>
+<body>
+
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="navbar-brand">
+				<img src="@{'public/images/logo-mar-peruano-bar.svg'}" alt="logo">
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-left">
+					<li><a href="/">INICIO</a></li>
+					<li><a href="/Acerca">ACERCA</a></li>
+					<li><a href="/Restaurante">RESTAURANTE</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="@{Menu.index}">MENÚ</a></li>
+					<li><a href="@{Eventos.index}">EVENTOS</a></li>
+					<li><a href="@{Contacto.index}">CONTACTO</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	#{doLayout /}
+
+	<footer>
+		<div class="container">
+			<div class="izquierda">
+				<img id="logo-footer" src="@{'public/images/logo-mar-peruano-footer.svg'}" alt="FooterLogo">
+			</div>
+			<div class="derecha">
+				<div class="redes-sociales">
+					<a target="_blank" href="https://www.facebook.com/restamarperuano"><img class="social-icon" src="@{'public/images/ic-facebook.svg'}" alt=""></a>
+					<a target="_blank" href="https://www.instagram.com/restaurantemarperuano/"><img class="social-icon" src="@{'public/images/ic-instagram.svg'}" alt=""></a>
+				</div>
+				<div class="info">Carrera 23 No. 7 Parque Alameda<span> | </span>Carrera 28 No. 10-105 Vía Antigua Yumbo</div>
+				<div class="info"><span>(+57) </span>2 555 5307<span> | (+57) </span>320 6303032</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,133 @@
+#{extends 'main.html' /}
+#{set title:'Mar Peruano Restaurante' /}
+
+<div class="banner" id="banner-restaurante">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="titulo">
+			Restaurante
+		</div>
+		<div class="leyenda">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		</div>
+	</div>
+</div>
+
+<div class="post1">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 columna">
+				<div class="texto1">Nuestro Restaurante</div>
+				<div class="texto2">La Casa</div>
+				<div class="divider"></div>
+				<div class="contenido">
+					<div class="texto-contenido no-margin">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 columna">
+				<div class="imagen imagen1"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 columna">
+				<div class="imagen imagen2 hidden-xs"></div>
+				<div class="contenido visible-xs">
+					<div class="texto-contenido">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					</div>
+					<div class="infobox">
+						<div class="icon"><img src="@{'public/images/ic-ubicacion.svg'}" alt="Ubicacion"></div>
+						<div class="yellowtext">Parque Alameda</div>
+						<div class="graytext">Carrera 23 No. 7 - 09 Parque Alameda</div>
+					</div>
+					<div class="infobox">
+						<div class="yellowtext">Vía Yumbo</div>
+						<div class="graytext">Carrera 28 No. 10 - 105 Vía Antigua Yumbo</div>
+					</div>
+					<div class="infobox margintop">
+						<div class="icon"><img src="@{'public/images/ic-llamanos.svg'}" alt="Llamanos"></div>
+						<div class="yellowtext">Llámanos</div>
+						<div class="graytext"><span>(+57) </span>2 555 5307<span> | (+57) </span>320 6303032</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 columna">
+				<div class="imagen imagen2 visible-xs"></div>
+				<div class="contenido hidden-xs">
+					<div class="texto-contenido">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					</div>
+					<div class="infobox">
+						<div class="icon"><img src="@{'public/images/ic-ubicacion.svg'}" alt="Ubicacion"></div>
+						<div class="yellowtext">Parque Alameda</div>
+						<div class="graytext">Carrera 23 No. 7 - 09 Parque Alameda</div>
+					</div>
+					<div class="infobox">
+						<div class="yellowtext">Vía Yumbo</div>
+						<div class="graytext">Carrera 28 No. 10 - 105 Vía Antigua Yumbo</div>
+					</div>
+					<div class="infobox margintop">
+						<div class="icon"><img src="@{'public/images/ic-llamanos.svg'}" alt="Llamanos"></div>
+						<div class="yellowtext">Llámanos</div>
+						<div class="graytext"><span>(+57) </span>2 555 5307<span> | (+57) </span>320 6303032</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="reserva">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="texto1">¡Conoce nuestra casa!</div>
+		<div class="texto2">Haz tu reserva</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-3"><input type="text" placeholder="Fecha"></div>
+			<div class="col-xs-12 col-sm-3"><input type="text" placeholder="Nombre completo"></div>
+			<div class="col-xs-12 col-sm-3"><input type="text" placeholder="Teléfono"></div>
+			<div class="col-xs-12 col-sm-3"><button class="boton">Enviar solicitud</button></div>
+		</div>
+		<div class="texto3">Si deseas realizar una reserva en nuestro restaurante, debes completar los datos solicitados en los campos superiores y hacer clic en <span>enviar solicitud</span>.<br>Una vez enviada tu solicitud nos pondremos en contacto contigo para conﬁrmar disponibilidad y horario en la fecha deseada.</div>
+	</div>
+</div>
+
+<div class="post1">
+	<div class="container">
+		<div class="texto1">Galería Fotográfica</div>
+		<div class="texto2">Aquí Ocurre Todo</div>
+		<div class="divider"></div>
+		<div class="contenido">
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<div class="carousel-image" id="carousel-item-1"></div>
+					</div>
+
+					<div class="item">
+						<div class="carousel-image" id="carousel-item-2"></div>
+					</div>
+				</div>
+
+				<!-- Left and right controls -->
+				<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

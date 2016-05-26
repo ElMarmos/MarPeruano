@@ -1,0 +1,66 @@
+#{extends 'main.html' /}
+#{set title:'Mar Peruano Restaurante' /}
+
+
+
+<div class="banner" id="banner-eventos">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="titulo">
+			Eventos
+		</div>
+	</div>
+</div>
+
+<div class="post1">
+	<div class="container">
+		<div class="texto1">Nuestros Eventos</div>
+		<div class="texto2">Son Inolvidables</div>
+		<div class="divider"></div>
+		<div class="contenido">
+			<div class="texto-contenido">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="reserva">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="texto1">¡Conoce nuestra casa!</div>
+		<div class="texto2">Haz tu reserva</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-3"><input type="text" placeholder="Fecha"></div>
+			<div class="col-xs-12 col-sm-3"><input type="text" placeholder="Nombre completo"></div>
+			<div class="col-xs-12 col-sm-3"><input type="text" placeholder="Teléfono"></div>
+			<div class="col-xs-12 col-sm-3"><button class="boton">Enviar solicitud</button></div>
+		</div>
+		<div class="texto3">Si deseas realizar una reserva en nuestro restaurante, debes completar los datos solicitados en los campos superiores y hacer clic en <span>enviar solicitud</span>.<br>Una vez enviada tu solicitud nos pondremos en contacto contigo para conﬁrmar disponibilidad y horario en la fecha deseada.</div>
+	</div>
+</div>
+
+<div class="mapa" id="googleMap"></div>
+
+<script>
+	function initialize() {
+		var mapProp = {
+			center:new google.maps.LatLng(3.4376354,-76.5363397),
+			zoom:19,
+			scrollwheel: false,
+			mapTypeId:google.maps.MapTypeId.ROADMAP
+		};
+		var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+		var myLatLng = {lat: 3.4376354, lng: -76.5363397};
+
+		var marker = new google.maps.Marker({
+			position: myLatLng,
+			map: map,
+			title: 'Restaurante Mar Peruano'
+		});
+
+		marker.setMap(map);
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
+</script>
