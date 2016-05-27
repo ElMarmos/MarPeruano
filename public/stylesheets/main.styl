@@ -105,6 +105,8 @@ body
 		background-image: url('../images/banner-menu.jpg')
 	#banner-eventos
 		background-image: url('../images/banner-eventos.jpg')
+		.container
+			height 90vh !important
 	#banner-contacto
 		background-image: url('../images/banner-contacto.jpg')
 
@@ -209,6 +211,9 @@ body
 			line-height 55px
 			text-align center
 			text-transform uppercase
+			
+			@media screen and (max-width: 500px)
+				font-size 42px
 			
 		.divider
 			background url('../images/separador.svg')
