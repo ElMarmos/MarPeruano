@@ -1,8 +1,53 @@
 #{extends 'main.html' /}
 #{set title:'Mar Peruano Restaurante' /}
 #{set 'moreScripts'}
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAx4oPXEulbMlmvs9xVnxaFp02ETYGVes"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAx4oPXEulbMlmvs9xVnxaFp02ETYGVes"></script>
 #{/set}
+
+#{if exito = 'si'}
+<div class="modal fade" tabindex="-1" role="dialog" id="dialogo-exito">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Éxito</h4>
+			</div>
+			<div class="modal-body">
+				<p>Gracias por comunicarte con nosotros, nos contactaremos en breve contigo.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="boton" data-dismiss="modal">Listo</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script>
+	$('#dialogo-exito').modal('show');
+</script>
+#{/if}
+#{else}
+<div class="modal fade" tabindex="-1" role="dialog" id="dialogo-exito">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Error</h4>
+			</div>
+			<div class="modal-body">
+				<p>Ocurrió un error al procesar tu solicitud, intenta de nuevo más tarde.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="boton" data-dismiss="modal">Listo</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script>
+	$('#dialogo-exito').modal('show');
+</script>
+#{/else}
 
 <div class="banner" id="banner-inicio">
 	<div class="overlay"></div>
@@ -58,10 +103,12 @@
 		<div class="texto1">¡Conoce nuestra casa!</div>
 		<div class="texto2">Haz tu reserva</div>
 		<div class="row">
-			<div class="col-xs-12 col-sm-3"><input type="text" placeholder="Fecha"></div>
-			<div class="col-xs-12 col-sm-3"><input type="text" placeholder="Nombre completo"></div>
-			<div class="col-xs-12 col-sm-3"><input type="text" placeholder="Teléfono"></div>
-			<div class="col-xs-12 col-sm-3"><button class="boton">Enviar solicitud</button></div>
+			<form action="@{Application.hacerReserva}" method="POST">
+				<div class="col-xs-12 col-sm-3"><input type="text" id="datepicker" placeholder="Fecha" name="fecha" title="Utiliza el formato dd/mm/yyyy" pattern="[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}" required></div>
+				<div class="col-xs-12 col-sm-3"><input type="text" placeholder="Nombre completo" name="nomCompleto" required></div>
+				<div class="col-xs-12 col-sm-3"><input type="text" placeholder="Teléfono" name="telefono" required></div>
+				<div class="col-xs-12 col-sm-3"><button type="submit" class="boton">Enviar solicitud</button></div>
+			</form>
 		</div>
 		<div class="texto3">Si deseas realizar una reserva en nuestro restaurante, debes completar los datos solicitados en los campos superiores y hacer clic en <span>enviar solicitud</span>.<br>Una vez enviada tu solicitud nos pondremos en contacto contigo para conﬁrmar disponibilidad y horario en la fecha deseada.</div>
 	</div>
@@ -70,6 +117,17 @@
 <div class="mapa" id="googleMap"></div>
 
 <script>
+
+	$('#datepicker').datepicker({
+		format: "dd/mm/yyyy",
+		weekStart: 1,
+		maxViewMode: "years",
+		language: "es",
+		keyboardNavigation: false,
+		zIndexOffset: 10000,
+		orientation: "bottom"
+	});
+
 	function initialize() {
 		var mapProp = {
 			center:new google.maps.LatLng(3.4376354,-76.5363397),

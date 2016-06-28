@@ -79,10 +79,12 @@
 		<div class="texto1">¡Conoce nuestra casa!</div>
 		<div class="texto2">Haz tu reserva</div>
 		<div class="row">
-			<div class="col-xs-12 col-sm-3"><input type="text" placeholder="Fecha"></div>
-			<div class="col-xs-12 col-sm-3"><input type="text" placeholder="Nombre completo"></div>
-			<div class="col-xs-12 col-sm-3"><input type="text" placeholder="Teléfono"></div>
-			<div class="col-xs-12 col-sm-3"><button class="boton">Enviar solicitud</button></div>
+			<form action="@{Application.hacerReserva}" method="POST">
+				<div class="col-xs-12 col-sm-3"><input type="text" id="datepicker" placeholder="Fecha" name="fecha" title="Utiliza el formato dd/mm/yyyy" pattern="[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}" required></div>
+				<div class="col-xs-12 col-sm-3"><input type="text" placeholder="Nombre completo" name="nomCompleto" required></div>
+				<div class="col-xs-12 col-sm-3"><input type="text" placeholder="Teléfono" name="telefono" required></div>
+				<div class="col-xs-12 col-sm-3"><button type="submit" class="boton">Enviar solicitud</button></div>
+			</form>
 		</div>
 		<div class="texto3">Si deseas realizar una reserva en nuestro restaurante, debes completar los datos solicitados en los campos superiores y hacer clic en <span>enviar solicitud</span>.<br>Una vez enviada tu solicitud nos pondremos en contacto contigo para conﬁrmar disponibilidad y horario en la fecha deseada.</div>
 	</div>
@@ -133,3 +135,15 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	$('#datepicker').datepicker({
+		format: "dd/mm/yyyy",
+		weekStart: 1,
+		maxViewMode: "years",
+		language: "es",
+		keyboardNavigation: false,
+		zIndexOffset: 10000,
+		orientation: "bottom"
+	});
+</script>
