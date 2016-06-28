@@ -1,22 +1,9 @@
 package controllers;
 
-import play.*;
 import play.cache.Cache;
 import play.libs.Images;
 import play.mvc.*;
-import java.util.*;
 import com.sendgrid.*;
-
-import javax.mail.Message;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
-
-import models.*;
 
 public class Application extends Controller {
 
@@ -32,11 +19,11 @@ public class Application extends Controller {
 	}
 
 	public static void hacerReserva(String fecha, String nomCompleto, String telefono){
-		SendGrid sendgrid = new SendGrid("app51353483@heroku.com", "vunprhty3457");
+		SendGrid sendgrid = new SendGrid("<correoaqui>", "<contraqui>");
 
 		SendGrid.Email email = new SendGrid.Email();
-		email.addTo("marperuanosm@gmail.com");
-		email.setFrom("marperuanosm@gmail.com");
+		email.addTo("<correorecibe>");
+		email.setFrom("<correoenvia>");
 		email.setSubject("Reserva para la fecha: "+fecha);
 		email.setText("El señor(a) "+nomCompleto+" ha solicitado hacer una reserva en el restaurante para la fecha "+fecha+". Este es su número de contacto: "+telefono);
 
