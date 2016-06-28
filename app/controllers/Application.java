@@ -24,10 +24,6 @@ public class Application extends Controller {
 		render();
 	}
 
-	public static void index(String exito) {
-		render(exito);
-	}
-
 	public static void captcha(String id) {
 		Images.Captcha captcha = Images.captcha();
 		String code = captcha.getText("#be0411");
@@ -47,7 +43,8 @@ public class Application extends Controller {
 		try {
 			SendGrid.Response response = sendgrid.send(email);
 			
-			index("si");
+			renderArgs.put("exito","si");
+			renderTemplate("Application/index.html");
 		}catch (SendGridException e) {
 			System.out.println(e);
 		}
