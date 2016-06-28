@@ -4,7 +4,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAx4oPXEulbMlmvs9xVnxaFp02ETYGVes"></script>
 #{/set}
 
-#{if exito = 'si'}
+#{if exito}
 <div class="modal fade" tabindex="-1" role="dialog" id="dialogo-exito">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -26,28 +26,6 @@
 	$('#dialogo-exito').modal('show');
 </script>
 #{/if}
-#{elseif exito ='no'}
-<div class="modal fade" tabindex="-1" role="dialog" id="dialogo-exito">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title">Error</h4>
-			</div>
-			<div class="modal-body">
-				<p>Ocurrió un error al procesar tu solicitud, intenta de nuevo más tarde.</p>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="boton" data-dismiss="modal">Listo</button>
-			</div>
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<script>
-	$('#dialogo-exito').modal('show');
-</script>
-#{/elseif}
 
 <div class="banner" id="banner-inicio">
 	<div class="overlay"></div>
