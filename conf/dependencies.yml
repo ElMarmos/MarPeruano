@@ -3,3 +3,4 @@
 require:
     - play 1.2.5.3
     - play -> secure
+    - com.sendgrid -> sendgrid-java 1.2.0
