@@ -46,6 +46,8 @@ public class Application extends Controller {
 
 		try {
 			SendGrid.Response response = sendgrid.send(email);
+			
+			index("si");
 		}catch (SendGridException e) {
 			System.out.println(e);
 		}
