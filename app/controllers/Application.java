@@ -19,11 +19,11 @@ public class Application extends Controller {
 	}
 
 	public static void hacerReserva(String fecha, String nomCompleto, String telefono){
-		SendGrid sendgrid = new SendGrid("<correoaqui>", "<contraqui>");
+		SendGrid sendgrid = new SendGrid("app51353483@heroku.com", "vunprhty3457");
 
 		SendGrid.Email email = new SendGrid.Email();
-		email.addTo("<correorecibe>");
-		email.setFrom("<correoenvia>");
+		email.addTo("marperuanosm@gmail.com");
+		email.setFrom("marperuanosm@gmail.com");
 		email.setSubject("Reserva para la fecha: "+fecha);
 		email.setText("El señor(a) "+nomCompleto+" ha solicitado hacer una reserva en el restaurante para la fecha "+fecha+". Este es su número de contacto: "+telefono);
 
@@ -36,41 +36,5 @@ public class Application extends Controller {
 			System.out.println(e);
 		}
 	}
-
-	//	public static void hacerReserva(String fecha, String nomCompleto, String telefono){
-	//		final String email="marperuanosm@gmail.com";
-	//		final String password="marperuano2015";
-	//		
-	//		Properties props = new Properties();
-	//		props.put("mail.smtp.auth", "true");
-	//		props.put("mail.smtp.starttls.enable", "true");
-	//		props.put("mail.smtp.host", "smtp.gmail.com");
-	//		props.put("mail.smtp.socketFactory.port", "465");
-	//		props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-	//		props.put("mail.smtp.ssl.enable", "true");
-	//		
-	//		Session session = Session.getInstance(props,
-	//				new javax.mail.Authenticator(){
-	//			protected PasswordAuthentication getPasswordAuthentication(){
-	//				return new PasswordAuthentication(email, password);
-	//			}
-	//		});
-	//		
-	//		try{
-	//			Message message = new MimeMessage(session);
-	//			message.setFrom(new InternetAddress("marperuanosm@gmail.com"));
-	//			message.addRecipients(Message.RecipientType.TO, InternetAddress.parse("marperuanosm@gmail.com"));
-	//			message.setSubject("Reserva para la fecha: "+fecha);
-	//			message.setText("El señor(a) "+nomCompleto+" ha solicitado hacer una reserva en el restaurante para la fecha "+fecha+". Este es su número de contacto: "+telefono);
-	//			
-	//			Transport.send(message);
-	//			
-	//			index("si");
-	//			
-	//		}catch(Exception e){
-	//			e.printStackTrace();
-	//			index("no");
-	//		}
-	//	}
 
 }
