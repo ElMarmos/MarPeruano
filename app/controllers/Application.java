@@ -3,6 +3,9 @@ package controllers;
 import play.cache.Cache;
 import play.libs.Images;
 import play.mvc.*;
+
+import java.io.File;
+
 import com.sendgrid.*;
 
 public class Application extends Controller {
@@ -35,6 +38,10 @@ public class Application extends Controller {
 		}catch (SendGridException e) {
 			System.out.println(e);
 		}
+	}
+	
+	public static void pdf(){
+		renderBinary(new File("public/pdf/carta-mar-peruano.pdf"));
 	}
 
 }

@@ -15,6 +15,8 @@ GET     /Eventos                                Eventos.index
 GET     /Menu                                   Menu.index
 GET     /Restaurante                            Restaurante.index
 
+GET		/CartaPDF								Application.pdf
+
 POST	/Application/hacerReserva				Application.hacerReserva
 
 # Ignore favicon requests
